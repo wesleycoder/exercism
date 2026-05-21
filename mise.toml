@@ -20,9 +20,9 @@ arg "<exercise>" help="exercise name/id"
 run = """
 cd nim/${usage_exercise}
 if [ "${usage_watch:-false}" = "true" ]; then
-  watchexec -c=reset -qre nim 'nim r ${usage_exercise}.nim'
+  watchexec -c=reset -qre nim 'nim r ${usage_exercise//-/_}.nim'
 else
-  nim r ${usage_exercise}.nim
+  nim r ${usage_exercise//-/_}.nim
 fi
 """
 
