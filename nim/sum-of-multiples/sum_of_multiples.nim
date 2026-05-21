@@ -7,7 +7,6 @@ proc sum*(limit: int, factors: openArray[int]): int =
     while mult < limit and factor > 0:
       if mult > 0: valid.addUnique(mult)
       mult += factor
-  echo "valid.len = " & $valid.len
   if valid.len > 0:
     result += foldl(valid, a + b)
   else:
